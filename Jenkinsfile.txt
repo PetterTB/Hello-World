@@ -1,0 +1,10 @@
+pipeline{
+stages {
+
+stage('triggering jobs') {
+    build job: 'bygg'
+    build job: 'test', parameters: [string(name: 'p2', value: 'b')]
+}
+
+}
+}
