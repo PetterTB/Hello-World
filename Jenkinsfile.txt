@@ -1,13 +1,21 @@
-pipeline{
-
+pipeline {
     agent any
 
     stages {
-
-        stage('triggering jobs') {
-            build job: 'bygg'
-            build job: 'test', parameters: [string(name: 'p2', value: 'b')]
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
         }
-
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
 }
