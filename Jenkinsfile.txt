@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 bat 'py random_build.py'
-				archiveArtifacts 'tests.py'
+				archiveArtifacts 'result.txt'
             }
         }
         stage('Test') {
