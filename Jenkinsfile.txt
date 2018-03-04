@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'py random_build.py"
 				archiveArtifacts 'tests.py'
             }
         }
